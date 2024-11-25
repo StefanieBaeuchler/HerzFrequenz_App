@@ -1,8 +1,9 @@
 package main;
 
 import main.exceptions.InvalidInputException;
-import main.exceptions.InvalidZoneException;
 import main.exceptions.InvalidHeartRateException;
+import main.exceptions.InvalidZoneException;
+
 
 public class HeartRateCalculator {
 
