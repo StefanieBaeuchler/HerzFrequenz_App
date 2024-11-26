@@ -42,4 +42,29 @@ public class HeartRateCalculatorTest {
             calculator.calcTargetHeartRate(0, 3);
         });
     }
+
+    @Test
+    void testCalcTargetHeartRate_RoundingDown() throws Exception {
+        assertEquals(160, calculator.calcTargetHeartRate(201, 3));
+    }
+
+    @Test
+    void testCalcTargetHeartRate_ExtremeHighValue() throws Exception {
+        assertEquals(Integer.MAX_VALUE, calculator.calcTargetHeartRate(Integer.MAX_VALUE, 5));
+    }
+
+    @Test
+    void testStringToInteger_WrittenNull() {
+        assertThrows(InvalidInputException.class, () -> {
+            calculator.stringToInteger("null");
+        });
+    }
+
+    @Test
+    void testStringToInteger_EmptyString() {
+        assertThrows(InvalidInputException.class, () -> {
+            calculator.stringToInteger("");
+        });
+    }
+
 }
