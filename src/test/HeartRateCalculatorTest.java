@@ -67,4 +67,9 @@ public class HeartRateCalculatorTest {
         });
     }
 
+    @Test
+    void testStringToInteger_NegativeNumber() throws Exception {
+        assertEquals(-123, calculator.stringToInteger("-123"));
+    }
+
 }
